@@ -14,8 +14,14 @@
     Upon clicking the button, the username should be reset to an empty string
   </li>
 </ol>
-<input type="text" [(ngModel)]="userName" />
+<hr />
+<label for="username">Username</label>
+<input type="text" class="form-control" [(ngModel)]="userName" />
 <p>{{ userName }}</p>
-<button class="btn btn-warning">Click Me</button>
-
-<!-- (click)="resetButton()" -->
+<button
+  class="btn btn-warning"
+  [disabled]="userName === ''"
+  (click)="userName = ''"
+>
+  Click Me
+</button>
